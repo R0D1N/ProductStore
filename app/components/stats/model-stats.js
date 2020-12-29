@@ -61,20 +61,26 @@ export default class ModelStats {
             if (!acc[index]){
                 acc[index] = {}
             }
-            //acc[index][name] = this.parseContent(content.$t, type)
+            //acc[index][name] = (content.$t, type)
+            acc[index][name] = content.$t
             return acc
         }, [])
     }
-
-/*    parseContent = (content, type = 'string') => {
+    search = text => {
+        const textL = text.toLowerCase().trim()
+        return this.stats.filter(({name}) => { name.toLowerCase().includes(textL) })
+    }
+   parseContent = (content, type = 'string') => {
         let answ = content
 
 
-        if (type == 'float'){
+        if (type === 'float'){
             answ = +(content.replace(',','.'))
         }
 
         return answ
-    }*/
+    }
+
 
 }
+
