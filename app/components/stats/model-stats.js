@@ -66,11 +66,13 @@ export default class ModelStats {
             return acc
         }, [])
     }
+
     search = text => {
         const textL = text.toLowerCase().trim()
         return this.stats.filter(({name}) => { name.toLowerCase().includes(textL) })
     }
-   parseContent = (content, type = 'string') => {
+
+/*   parseContent = (content, type = 'string') => {
         let answ = content
 
 
@@ -79,8 +81,6 @@ export default class ModelStats {
         }
 
         return answ
-    }
-
-
+    }*/
 }
 
