@@ -4,7 +4,7 @@ import ViewStats from "./view-stats.js";
 export default class ControllerStats{
     constructor( {  notify, events } ) {
         this.model = new ModelStats()
-        this.view = new ViewStats(this.onSearch, this.onSort)
+        this.view = new ViewStats(this.onSearch, this.onSort, this.onFilter)
 
         this.init()
 
@@ -16,7 +16,7 @@ export default class ControllerStats{
          this.model.loadStats()
             .then(d => {
                 this.view.render(d);
-                this.notify(events.LOADED_DATA, d);
+                this.notify(this.events.LOADED_DATA, d);
             })
     }
 
@@ -34,7 +34,8 @@ export default class ControllerStats{
 
     onFilter = ev => {
         console.log('filter')
-        const stats = this.model.filter(ev.targer.value)
+        const stats = this.model.filtering(ev.target.value)
+        console.log(stats)
         this.view.render(stats)
     }
 }

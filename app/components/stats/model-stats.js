@@ -83,11 +83,10 @@ export default class ModelStats {
         return this.stats
     }
 
-    filter = type => {
-        this.stats.filter(stats => stats.category = type)
-
-        return this.stats
+    filtering = type => {
+        return this.stats.filter(st => st.category === type)
     }
+
 /*   parseContent = (content, type = 'string') => {
         let answ = content
 

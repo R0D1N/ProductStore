@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87551352-e7a1-40d4-8905-ca9126f86bb2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/helpers/events.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/stats/controller-stats.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/stats/controller-stats.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/stats/model-stats.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/stats/model-stats.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/stats/view-stats.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/stats/view-stats.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/publisher.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/publisher.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1608843391325</updated>
       <workItem from="1608843395651" duration="22084000" />
+      <workItem from="1609711268144" duration="2924000" />
     </task>
     <task id="LOCAL-00001" summary="MVC structure">
       <created>1608902687109</created>
@@ -71,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608902687109</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="evens added">
+      <created>1609710098356</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609710098356</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +127,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="MVC structure" />
     <MESSAGE value="correct render of store" />
-    <option name="LAST_COMMIT_MESSAGE" value="correct render of store" />
+    <MESSAGE value="evens added" />
+    <option name="LAST_COMMIT_MESSAGE" value="evens added" />
   </component>
 </project>
