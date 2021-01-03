@@ -69,9 +69,25 @@ export default class ModelStats {
 
     search = text => {
         const textL = text.toLowerCase().trim()
-        return this.stats.filter(({name}) => { name.toLowerCase().includes(textL) })
+        return this.stats.filter(({name}) => name.toLowerCase().includes(textL))
     }
 
+    sort = type => {
+        const sortMethods = {
+            'low-price' : (a, b) => a.price - b.price,
+            'high-price': (a, b) => b.price - a.price,
+        }
+
+        this.stats.sort(sortMethods[type])
+
+        return this.stats
+    }
+
+    filter = type => {
+        this.stats.filter(stats => stats.category = type)
+
+        return this.stats
+    }
 /*   parseContent = (content, type = 'string') => {
         let answ = content
 

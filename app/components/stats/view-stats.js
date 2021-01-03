@@ -1,9 +1,12 @@
 export default class ViewStats {
     htmlCardLayout = document.querySelector('.cards')
     htmlSearchInput = document.querySelector('.inp-search')
+    htmlSortInput = document.querySelector('.select-sort')
 
-    constructor(cbSearch) {
+    constructor(cbSearch, cbSort, cbFilter) {
         this.htmlSearchInput.addEventListener('input', cbSearch)
+        this.htmlSortInput.addEventListener('input', cbSort)
+        this.thmlFilterInput.addEventListener('input', cbFilter)
     }
 
 
