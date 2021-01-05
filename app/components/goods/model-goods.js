@@ -1,7 +1,7 @@
-export default class ModelStats {
-    link = "https://spreadsheets.google.com/feeds/cells/1PXorfz2O2NqH-FcW0nA-HhmtZMmSSwgHheifWc0e1tU/2/public/full?alt=json"
+export default class ModelGoods {
+    link = "https://spreadsheets.google.com/feeds/cells/1PXorfz2O2NqH-FcW0nA-HhmtZMmSSwgHheifWc0e1tU/3/public/full?alt=json"
 
-    stats = []
+    goods = []
 
     names = [
         {
@@ -46,8 +46,9 @@ export default class ModelStats {
         return fetch(this.link)
             .then( r => r.json())
             .then(d => {
-                this.stats = this.parseData(d.feed.entry)
-                return this.stats
+                this.goods = this.parseData(d.feed.entry)
+                this.goods = this.goods.slice(1);
+                return this.goods
             })
     }
 
@@ -61,7 +62,6 @@ export default class ModelStats {
             if (!acc[index]){
                 acc[index] = {}
             }
-            //acc[index][name] = (content.$t, type)
             acc[index][name] = content.$t
             return acc
         }, [])
@@ -69,7 +69,7 @@ export default class ModelStats {
 
     search = text => {
         const textL = text.toLowerCase().trim()
-        return this.stats.filter(({name}) => name.toLowerCase().includes(textL))
+        return this.goods.filter(({name}) => name.toLowerCase().includes(textL))
     }
 
     sort = type => {
@@ -78,24 +78,18 @@ export default class ModelStats {
             'high-price': (a, b) => b.price - a.price,
         }
 
-        this.stats.sort(sortMethods[type])
+        this.goods.sort(sortMethods[type])
 
-        return this.stats
+        return this.goods
     }
 
     filtering = type => {
-        return this.stats.filter(st => st.category === type)
+        return this.goods.filter(st => st.category === type)
     }
 
-/*   parseContent = (content, type = 'string') => {
-        let answ = content
+   parseContent = goods => {
 
+       arr.slice(1).map(this.renderCard).join('');
 
-        if (type === 'float'){
-            answ = +(content.replace(',','.'))
-        }
-
-        return answ
-    }*/
+    }
 }
-

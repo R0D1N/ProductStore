@@ -1,5 +1,5 @@
-import ControllerStats from "./components/stats/controller-stats.js";
+import ControllerGoods from "./components/goods/controller-goods.js";
 import Publisher from "./helpers/publisher.js";
 
 const publisher = new Publisher()
-const stat = new ControllerStats(publisher.methods)
+const stat = new ControllerGoods(publisher.methods)
