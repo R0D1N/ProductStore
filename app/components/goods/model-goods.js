@@ -1,5 +1,5 @@
 export default class ModelGoods {
-    link = "https://spreadsheets.google.com/feeds/cells/1PXorfz2O2NqH-FcW0nA-HhmtZMmSSwgHheifWc0e1tU/3/public/full?alt=json"
+    link = "https://spreadsheets.google.com/feeds/cells/1PXorfz2O2NqH-FcW0nA-HhmtZMmSSwgHheifWc0e1tU/1/public/full?alt=json"
 
     goods = []
 
@@ -47,7 +47,7 @@ export default class ModelGoods {
             .then( r => r.json())
             .then(d => {
                 this.goods = this.parseData(d.feed.entry)
-                this.goods = this.goods.slice(1);
+                this.goods = this.goods.slice(1)
                 return this.goods
             })
     }
@@ -63,6 +63,9 @@ export default class ModelGoods {
                 acc[index] = {}
             }
             acc[index][name] = content.$t
+
+            acc[index][name] = this.parseContent(content.$t, name);
+
             return acc
         }, [])
     }
@@ -87,9 +90,25 @@ export default class ModelGoods {
         return this.goods.filter(st => st.category === type)
     }
 
-   parseContent = goods => {
+   parseContent = (content, name = 'string') => {
 
-       arr.slice(1).map(this.renderCard).join('');
+       let answ = content;
+       switch(name){
+           case 'ingredients' : {
+               answ = answ.toLowerCase()
+               break;
+           }
+           default: {
+               answ = content;
+               break;
+           }
+       }
 
+       return answ;
+
+    }
+
+    getRecordById = id =>{
+        return this.goods.find(gd => gd.id === id)
     }
 }

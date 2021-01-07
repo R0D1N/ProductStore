@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87551352-e7a1-40d4-8905-ca9126f86bb2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/telegram_bot/controller-bot.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/telegram_bot/model-bot.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/card-details/controller-card-details.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/card-details/model-card-details.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/card-details/view-card-details.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ProductStore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProductStore.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/stats/controller-stats.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/goods/controller-goods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/stats/model-stats.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/goods/model-goods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/stats/view-stats.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/goods/view-goods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/goods/controller-goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/goods/controller-goods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/goods/model-goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/goods/model-goods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/goods/view-goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/goods/view-goods.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/helpers/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/events.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +47,6 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/components/good_details" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -77,7 +77,7 @@
       <updated>1608843391325</updated>
       <workItem from="1608843395651" duration="22084000" />
       <workItem from="1609711268144" duration="10547000" />
-      <workItem from="1609850075361" duration="601000" />
+      <workItem from="1609850075361" duration="15123000" />
     </task>
     <task id="LOCAL-00001" summary="MVC structure">
       <created>1608902687109</created>
@@ -100,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609714390270</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed: render">
+      <created>1609858698274</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609858698274</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +160,7 @@
     <MESSAGE value="correct render of store" />
     <MESSAGE value="evens added" />
     <MESSAGE value="feat: filter" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: filter" />
+    <MESSAGE value="fixed: render" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed: render" />
   </component>
 </project>
