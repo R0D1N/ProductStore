@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87551352-e7a1-40d4-8905-ca9126f86bb2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/components/card-details/controller-card-details.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/card-details/model-card-details.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/card-details/view-card-details.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ProductStore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProductStore.iml" afterDir="false" />
+    <list default="true" id="87551352-e7a1-40d4-8905-ca9126f86bb2" name="Default Changelist" comment="feat: sort-search components">
+      <change afterPath="$PROJECT_DIR$/app/components/sort-search/controller-so-se.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/sort-search/model-so-se.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/sort-search/view-so-se.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/goods/controller-goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/goods/controller-goods.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/goods/model-goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/goods/model-goods.js" afterDir="false" />
@@ -13,7 +12,6 @@
       <change beforePath="$PROJECT_DIR$/app/helpers/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/events.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +75,9 @@
       <updated>1608843391325</updated>
       <workItem from="1608843395651" duration="22084000" />
       <workItem from="1609711268144" duration="10547000" />
-      <workItem from="1609850075361" duration="15123000" />
+      <workItem from="1609850075361" duration="15816000" />
+      <workItem from="1610048727609" duration="241000" />
+      <workItem from="1610049017110" duration="4326000" />
     </task>
     <task id="LOCAL-00001" summary="MVC structure">
       <created>1608902687109</created>
@@ -107,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609858698274</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: good details">
+      <created>1610047457907</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1610047457907</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +168,8 @@
     <MESSAGE value="evens added" />
     <MESSAGE value="feat: filter" />
     <MESSAGE value="fixed: render" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed: render" />
+    <MESSAGE value="feat: good details" />
+    <MESSAGE value="feat: sort-search components" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: sort-search components" />
   </component>
 </project>

@@ -1,14 +1,8 @@
 export default class ViewGoods {
     htmlCardLayout = document.querySelector('.cards')
-    htmlSearchInput = document.querySelector('.inp-search')
-    htmlSortInput = document.querySelector('.select-sort')
-    htmlFilterInput = document.querySelector('.select-filter')
 
-    constructor(cbSearch, cbSort, cbFilter, onDetails) {
-        this.htmlSearchInput.addEventListener('input', cbSearch)
-        this.htmlSortInput.addEventListener('input', cbSort)
-        this.htmlFilterInput.addEventListener('input', cbFilter)
 
+    constructor(onDetails) {
         this.onDetails = onDetails;
     }
 
@@ -18,7 +12,7 @@ export default class ViewGoods {
         [...this.htmlCardLayout.querySelectorAll('.cards .btn-details')].forEach(btn => btn.addEventListener('click', this.onDetails))
     }
 
-    renderCard = ({id, name, manufacture, category, ingredients, amount, units, price, img}) => {
+    renderCard = ({id, name, manufacture, units, price, img}) => {
         return `
             <div class="col">
                 <div class="card h-100">
@@ -37,7 +31,3 @@ export default class ViewGoods {
             </div>`
     }
 }
-                   /*
-                    <div className="card-footer">
-
-                        </button>*/
