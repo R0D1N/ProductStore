@@ -44,7 +44,7 @@ export default class ModelGoods {
 
     loadStats = () => {
         return fetch(this.link)
-            .then( r => r.json())
+            .then(r => r.json())
             .then(d => {
                 this.goods = this.parseData(d.feed.entry)
                 this.goods = this.goods.slice(1)
@@ -55,11 +55,11 @@ export default class ModelGoods {
     parseData = arr => {
         const shift = this.names.length
 
-        return arr.reduce((acc, { content }, i) => {
+        return arr.reduce((acc, {content}, i) => {
             const index = Math.floor(i / shift)
-            const { name } = this.names[i % shift]
+            const {name} = this.names[i % shift]
 
-            if (!acc[index]){
+            if (!acc[index]) {
                 acc[index] = {}
             }
             acc[index][name] = content.$t
@@ -71,25 +71,25 @@ export default class ModelGoods {
     }
 
 
-   parseContent = (content, name = 'string') => {
+    parseContent = (content, name = 'string') => {
 
-       let answ = content;
-       switch(name){
-           case 'ingredients' : {
-               answ = answ.toLowerCase()
-               break;
-           }
-           default: {
-               answ = content;
-               break;
-           }
-       }
+        let answ = content;
+        switch (name) {
+            case 'ingredients' : {
+                answ = answ.toLowerCase()
+                break;
+            }
+            default: {
+                answ = content;
+                break;
+            }
+        }
 
-       return answ;
+        return answ;
 
     }
 
-    getRecordById = id =>{
+    getRecordById = id => {
         return this.goods.find(gd => gd.id === id)
     }
 }

@@ -5,7 +5,9 @@ const events = {
     REND_DETAILS : 'rendering card details',
     AFTER_SORT   : 'data after sorting',
     AFTER_SEARCH : 'data after searching',
-    AFTER_FILTER : 'data after filtering'
+    AFTER_FILTER : 'data after filtering',
+    CART_CLICK   : 'user add product to cart',
+
 
 }
 

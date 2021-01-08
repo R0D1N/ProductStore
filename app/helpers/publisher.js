@@ -14,7 +14,6 @@ export default class Publisher{
 
     notify = (eventType, data) => {
         this.getListeners(eventType).forEach(listener => listener(data));
-
     }
 
     getListeners = eventType => {

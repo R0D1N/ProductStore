@@ -2,16 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87551352-e7a1-40d4-8905-ca9126f86bb2" name="Default Changelist" comment="feat: sort-search components">
-      <change afterPath="$PROJECT_DIR$/app/components/sort-search/controller-so-se.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/sort-search/model-so-se.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/components/sort-search/view-so-se.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/cart/model-cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/components/cart/view-cart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/card-details/model-card-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/cart/controller-cart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/goods/controller-goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/goods/controller-goods.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/goods/model-goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/goods/model-goods.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/goods/view-goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/goods/view-goods.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/helpers/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/publisher.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/publisher.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +34,7 @@
   </component>
   <component name="ProjectId" id="1m7SyYazF0VkSUZyUrybGQNT8fl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">

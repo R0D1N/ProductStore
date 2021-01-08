@@ -2,14 +2,18 @@ export default class ViewGoods {
     htmlCardLayout = document.querySelector('.cards')
 
 
-    constructor(onDetails) {
+    constructor(onDetails, onCart) {
         this.onDetails = onDetails;
+        this.onCart = onCart;
     }
 
     render = arr => {
         this.htmlCardLayout.innerHTML = arr.map(this.renderCard).join('');
 
-        [...this.htmlCardLayout.querySelectorAll('.cards .btn-details')].forEach(btn => btn.addEventListener('click', this.onDetails))
+        [...this.htmlCardLayout.querySelectorAll('.cards .btn-details')].forEach(btn => btn.addEventListener('click', this.onDetails));
+
+        [...this.htmlCardLayout.querySelectorAll('.cards .btn-cart')].forEach(btn => btn.addEventListener('click', this.onCart));
+
     }
 
     renderCard = ({id, name, manufacture, units, price, img}) => {
@@ -24,7 +28,7 @@ export default class ViewGoods {
                         <p class="card-text"><small class="text-muted">${units}</small></p>
                     </div>
                     <div class="card-footer">
-                        <button type="button" class="btn btn-primary ">In cart</button>
+                        <button type="button" class="btn btn-primary btn-cart" data-cart-id="${id}">In cart</button>
                         <button type="button" class="btn btn-link btn-details" data-bs-toggle="modal" data-bs-target="#ModalDetails" data-details-id="${id}">details
                     </div>
                 </div>
