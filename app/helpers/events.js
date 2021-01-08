@@ -6,7 +6,7 @@ const events = {
     AFTER_SORT   : 'data after sorting',
     AFTER_SEARCH : 'data after searching',
     AFTER_FILTER : 'data after filtering',
-    CART_CLICK   : 'user add product to cart',
+    CART_CD_CLICK: 'user add product to cart',
 
 
 }

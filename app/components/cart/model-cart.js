@@ -1,8 +1,12 @@
 export default class ModelCart {
 
-    addToCart = (data, array) => {
-        array.push(JSON.stringify(data))
-        localStorage.removeItem('cart')
-        localStorage.setItem('cart', JSON.stringify(array));
+    array = [];
+    constructor() {
+        this.array = JSON.parse(localStorage.getItem('cart')??'[]');
+    }
+
+    addToCart = data => {
+        this.array.push(data);
+        localStorage.setItem('cart', JSON.stringify(this.array));
     }
 }

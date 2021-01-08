@@ -2,16 +2,14 @@ import ModelCart from "./model-cart.js";
 
 export default class ControllerCart{
 
-    array = [];
-
     constructor({ subscribe, events }) {
 
         this.model = new ModelCart()
 
-        subscribe(events.CART_CLICK, this.onCart)
+        subscribe(events.CART_CD_CLICK, this.onCartCard)
     }
 
-    onCart = data =>{
-        this.model.addToCart(data, this.array)
+    onCartCard = data =>{
+        this.model.addToCart(data)
     }
 }

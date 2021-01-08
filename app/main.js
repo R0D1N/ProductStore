@@ -9,4 +9,3 @@ const sortSearch = new ControllerSoSe(publisher.methods)
 const stat = new ControllerGoods(publisher.methods)
 const details = new ControllerCardDetails(publisher.methods)
 const cart = new ControllerCart(publisher.methods)
-
