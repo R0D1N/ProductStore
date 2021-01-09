@@ -6,7 +6,6 @@ export default class ControllerCardDetails{
         this.view = new ViewCardDetails()
 
         subscribe(events.REND_DETAILS, this.onDetails)
-
     }
 
     onDetails = data => {

@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87551352-e7a1-40d4-8905-ca9126f86bb2" name="Default Changelist" comment="feat: sort-search components">
+    <list default="true" id="87551352-e7a1-40d4-8905-ca9126f86bb2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/card-details/controller-card-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/card-details/controller-card-details.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/cart/controller-cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/cart/controller-cart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/cart/model-cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/cart/model-cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/cart/view-cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/cart/view-cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/goods/controller-goods.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/goods/controller-goods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/sort-search/controller-so-se.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/sort-search/controller-so-se.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/sort-search/view-so-se.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/sort-search/view-so-se.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/helpers/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +78,7 @@
       <workItem from="1609850075361" duration="15816000" />
       <workItem from="1610048727609" duration="241000" />
       <workItem from="1610049017110" duration="4326000" />
-      <workItem from="1610113870601" duration="4269000" />
+      <workItem from="1610113870601" duration="13372000" />
     </task>
     <task id="LOCAL-00001" summary="MVC structure">
       <created>1608902687109</created>
@@ -111,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610047457907</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: sort-search components">
+      <created>1610138863444</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1610138863444</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

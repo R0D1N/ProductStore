@@ -1,7 +1,9 @@
 export default class ViewSoSe{
     htmlHeader = document.querySelector('header');
 
-    constructor(cbSort, cbSearch, cbFilter) {
+    constructor(cbSort, cbSearch, cbFilter, onCart) {
+
+        this.onCart = onCart;
 
         this.htmlHeader.insertAdjacentHTML('beforeend', `
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -41,17 +43,20 @@ export default class ViewSoSe{
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2 inp-search" type="search" placeholder="Search" aria-label="Search">
+                    <button type="button" class="btn btn-success btn-cart" data-bs-toggle="modal" data-bs-target="#ModalCart">MyCart</button>
                 </form>
             </div>
         </div>
     </nav>`)
 
-        this.htmlSearchInput = document.querySelector('.inp-search')
-        this.htmlSortInput = document.querySelector('.select-sort')
-        this.htmlFilterInput = document.querySelector('.select-filter')
+        this.htmlSearchInput = document.querySelector('.inp-search');
+        this.htmlSortInput = document.querySelector('.select-sort');
+        this.htmlFilterInput = document.querySelector('.select-filter');
+        this.htmlCartBtn = document.querySelector('.btn-cart');
 
-        this.htmlSearchInput.addEventListener('input', cbSearch)
-        this.htmlSortInput.addEventListener('input', cbSort)
-        this.htmlFilterInput.addEventListener('input', cbFilter)
+        this.htmlSearchInput.addEventListener('input', cbSearch);
+        this.htmlSortInput.addEventListener('input', cbSort);
+        this.htmlFilterInput.addEventListener('input', cbFilter);
+        this.htmlCartBtn.addEventListener('click', this.onCart);
     }
 }

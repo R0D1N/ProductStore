@@ -4,7 +4,7 @@ import ViewGoods from "./view-goods.js";
 export default class ControllerGoods {
     constructor( {  notify, events, subscribe } ) {
         this.model = new ModelGoods()
-        this.view = new ViewGoods(this.onDetails, this.onCart)
+        this.view = new ViewGoods(this.onDetails, this.onCartCard)
 
         this.init()
 
@@ -33,8 +33,8 @@ export default class ControllerGoods {
         this.notify(this.events.REND_DETAILS,  goods)
     }
 
-    onCart = ev =>{
+    onCartCard = ev =>{
         const goods = this.model.getRecordById(ev.target.dataset.cartId)
-        this.notify(this.events.CART_CLICK, goods)
+        this.notify(this.events.CART_CD_CLICK, goods)
     }
 }
