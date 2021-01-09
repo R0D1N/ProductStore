@@ -19,8 +19,8 @@ export default class ModelCart {
         return sum;
     }
 
-
     addToCart = data => {
+        console.log(data)
         this.array.push(data);
         this.unqList.add(data);
         this.rendArray = [];
@@ -33,5 +33,39 @@ export default class ModelCart {
         })
         localStorage.setItem('rendCart', JSON.stringify(this.rendArray));
         localStorage.setItem('cart', JSON.stringify(this.array));
+    }
+
+    getRecordById = id => {
+        return this.rendArray.find(gd => gd.id === id)
+    }
+
+    getRecordByIdAr = id => {
+        return this.array.find(gd => gd.id === id)
+    }
+
+    delete_good = good =>{
+
+        const arId = this.rendArray.indexOf(good);
+        this.rendArray.splice(arId, 1);
+
+        this.unqList.forEach(el => {
+            if (el.id === good.id){
+                this.unqList.delete(el);
+            }
+        })
+
+        localStorage.setItem('rendCart', JSON.stringify(this.rendArray))
+        this.delete_in_array(good);
+
+    }
+
+    delete_in_array = good => {
+        let arId = this.array.findIndex(gd => gd.id === good.id);
+        if (arId === -1){
+            localStorage.setItem('cart', JSON.stringify(this.array));
+            return
+        }
+        this.array.splice(arId, 1)
+        this.delete_in_array(good);
     }
 }
