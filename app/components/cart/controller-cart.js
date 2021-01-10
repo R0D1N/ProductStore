@@ -3,14 +3,19 @@ import ViewCart from "./view-cart.js";
 
 export default class ControllerCart{
 
-    constructor({ subscribe, events }) {
+    constructor({ subscribe, events, notify }) {
 
         this.model = new ModelCart();
-        this.view = new ViewCart(this.onDel, this.onPlus, this.onBuy);
-        //this.view = new ViewCart(this.onDel);
+        this.view = new ViewCart(this.onDel, this.onPlus, this.onBuy, this.onGetForm);
+        this.notify = notify;
+        this.events = events;
+
 
         subscribe(events.CART_CD_CLICK, this.onCartCard);
         subscribe(events.REND_CART, this.onRender);
+
+
+
     }
 
     onCartCard = data =>{
@@ -39,5 +44,12 @@ export default class ControllerCart{
 
     onBuy = _ =>{
         this.view.renderForm();
+    }
+
+    onGetForm = ev =>{
+        this.cusInfo = this.model.getForm(ev)
+        this.model.makeOrderHs(this.cusInfo);
+        this.botData = this.model.getBotStat(this.cusInfo)
+        this.notify(this.events.SEND_MESSAGE, JSON.stringify(this.botData))
     }
 }

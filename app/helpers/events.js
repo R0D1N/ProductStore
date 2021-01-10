@@ -8,6 +8,7 @@ const events = {
     AFTER_FILTER : 'data after filtering',
     CART_CD_CLICK: 'user add product to cart',
     REND_CART    : 'rendering user cart',
+    SEND_MESSAGE : 'send message to telegram_bot',
 
 }
 

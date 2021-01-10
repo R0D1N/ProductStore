@@ -3,16 +3,16 @@ export default class ModelCart {
     array = [];
     unqList = new Set();
     rendArray = [];
-
-
+    history = [];
 
     constructor() {
-        this.array = JSON.parse(localStorage.getItem('cart')??'[]');
-        this.rendArray = JSON.parse(localStorage.getItem('rendCart')??'[]');
+        this.array = JSON.parse(localStorage.getItem('cart') ?? '[]');
+        this.history = JSON.parse(localStorage.getItem('history') ?? '[]');
+        this.rendArray = JSON.parse(localStorage.getItem('rendCart') ?? '[]');
     }
 
     summary = _ => {
-        const sum = this.array.reduce((acc, { price }) => {
+        const sum = this.array.reduce((acc, {price}) => {
             acc += +price;
             return acc;
         }, 0);
@@ -20,12 +20,11 @@ export default class ModelCart {
     }
 
     addToCart = data => {
-        console.log(data)
         this.array.push(data);
         this.unqList.add(data);
         this.rendArray = [];
         this.unqList.forEach(el => {
-            const count  = this.array.reduce((c, data) => data === el ? ++c : c, 0)
+            const count = this.array.reduce((c, data) => data === el ? ++c : c, 0)
             this.rendArray.push({
                 count,
                 ...el
@@ -43,13 +42,13 @@ export default class ModelCart {
         return this.array.find(gd => gd.id === id)
     }
 
-    delete_good = good =>{
+    delete_good = good => {
 
         const arId = this.rendArray.indexOf(good);
         this.rendArray.splice(arId, 1);
 
         this.unqList.forEach(el => {
-            if (el.id === good.id){
+            if (el.id === good.id) {
                 this.unqList.delete(el);
             }
         })
@@ -61,11 +60,64 @@ export default class ModelCart {
 
     delete_in_array = good => {
         let arId = this.array.findIndex(gd => gd.id === good.id);
-        if (arId === -1){
+        if (arId === -1) {
             localStorage.setItem('cart', JSON.stringify(this.array));
             return
         }
         this.array.splice(arId, 1)
         this.delete_in_array(good);
     }
+
+    getForm = ev => {
+        ev.preventDefault();
+
+        const fields = document.querySelectorAll('input, select, textarea');
+        const values = {};
+        fields.forEach(fl =>{
+            const {name, value} = fl;
+            values[name] = value;
+        })
+        let date = Date.now();
+
+        values.date = date.toString();
+        values.order = this.rendArray;
+
+        return values;
+    }
+
+    makeOrderHs = info =>{
+        this.history.push(info);
+        localStorage.removeItem('history');
+        localStorage.setItem('history', JSON.stringify(this.history));
+    }
+
+    getBotStat = data =>{
+        const {  } = data;
+        return encodeURI(`
+        
+        `);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
