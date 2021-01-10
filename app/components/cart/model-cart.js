@@ -77,9 +77,7 @@ export default class ModelCart {
             const {name, value} = fl;
             values[name] = value;
         })
-        let date = Date.now();
-
-        values.date = date.toString();
+        values.date = Date.now();
         values.order = this.rendArray;
         this.rendArray = [];
         return values;
@@ -87,13 +85,21 @@ export default class ModelCart {
 
     makeOrderHs = info =>{
         this.history.push(info);
-        console.log(this.history)
         localStorage.removeItem('history');
         localStorage.setItem('history', JSON.stringify(this.history));
     }
 
     getBotStat = data =>{
         const { name, LName, email, city, date } = data;
-        return encodeURI(` `);
+
+        console.log(data);
+
+        return encodeURI(`        
+        ${name}
+        ${LName}
+        ${email}                
+        ${city}
+        ${date}
+        `.replace(/\./g, ','));
     }
 }

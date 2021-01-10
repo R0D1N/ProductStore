@@ -43,11 +43,19 @@ export default class ControllerCart{
         this.view.renderForm();
     }
 
+    //cusInfo = INFO about customer from FORM
+
     onGetForm = ev =>{
         this.cusInfo = this.model.getForm(ev);
         this.model.makeOrderHs(this.cusInfo);
-        this.botData = this.model.getBotStat(this.cusInfo);
-        this.notify(this.events.SEND_MESSAGE, this.botData);
+        this.SendMessage(this.cusInfo);
+    }
+
+    SendMessage = data =>{
+        this.botData = this.model.getBotStat(data);
+        this.notify(this.events.SEND_MESSAGE, JSON.stringify(this.botData));
         alert('Thank you for order!');
     }
+
+
 }

@@ -42,8 +42,6 @@ export default class ViewHistory{
 
             });
 
-            const{name, LName } = data
-
             for (let i = 0; i < data.length; i++){
                 const historyItem = document.createElement("li");
                 historyItem.innerHTML = `             
@@ -61,7 +59,7 @@ export default class ViewHistory{
                     <p>ID: ${data[i].order[j].id}</p>
                     <p>Title: ${data[i].order[j].name}</p>
                     <p>Company: ${data[i].order[j].manufacture}</p>
-                    <p>Price${data[i].order[j].price} UAH per ${data[i].order[j].units}</p>
+                    <p>Price: ${data[i].order[j].price} UAH per ${data[i].order[j].units}</p>
                     <p>You'v bought:${data[i].order[j].count} items</p>`;
                     historyItem.append(orderItem)
                 }

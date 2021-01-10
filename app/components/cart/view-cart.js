@@ -2,7 +2,7 @@ export default class ViewCart {
     htmlModals = document.querySelector('.modals')
 
     constructor(onDel, onPlus, onBuy, onForm) {
-        this.onGetForm = onForm;
+        this.onForm = onForm;
         this.onBuy = onBuy;
         this.onDel = onDel;
         this.onPlus = onPlus;
@@ -106,8 +106,6 @@ export default class ViewCart {
                 </form>`;
 
         this.htmlForm = document.getElementById('form')
-        this.htmlForm.addEventListener('submit', this.onGetForm)
-
-
+        this.htmlForm.addEventListener('submit', this.onForm)
     }
 }
