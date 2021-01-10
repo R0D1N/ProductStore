@@ -9,7 +9,7 @@ const events = {
     CART_CD_CLICK: 'user add product to cart',
     REND_CART    : 'rendering user cart',
     SEND_MESSAGE : 'send message to telegram_bot',
-
+    REND_HISTORY : 'rendering orders history'
 }
 
-export default events
+export default events;

@@ -20,9 +20,7 @@ export default class ViewCart {
                     </div>
                         <div class="modal-footer">                
                             <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Later</button>
-                        </div>
-                    
-                    
+                        </div>                                      
                 </div>
             </div>
         </div>`)
@@ -54,7 +52,7 @@ export default class ViewCart {
                 <p>Count: ${count} </p>
                 <div>
                     <button type="button" class="btn btn-danger btn-del" data-del-id="${id}">Delete it                   
-                    <button type="button" class="btn btn-danger btn-add" data-add-id="${id}">+
+                    <button type="button" class="btn btn-danger btn-add ms-4" data-add-id="${id}">+
                 </div>`;
 
                 this.htmlCartBody.append(cartItem);
@@ -64,8 +62,8 @@ export default class ViewCart {
             const cartFooter = document.createElement('div');
             cartFooter.classList.add("d-flex", "justify-content-around")
             cartFooter.innerHTML = `
-            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Later</button>
-            <h2>Summary: ${sum}</h2>
+            <button type="button" class="btn btn-warning me-2" data-bs-dismiss="modal">Later</button>
+            <h2 class="me-2">Summary: ${sum}</h2>
             <button type="button" class="btn btn-success btn-form">Buy</button>`;
             this.htmlCartFooter.append(cartFooter);
 

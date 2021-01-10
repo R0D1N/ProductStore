@@ -4,7 +4,7 @@ import ModelSoSe from "./model-so-se.js";
 export default class ControllerSoSe{
     constructor({ subscribe, notify, events }) {
 
-        this.view = new ViewSoSe(this.onSort, this.onSearch, this.onFilter, this.onCart)
+        this.view = new ViewSoSe(this.onSort, this.onSearch, this.onFilter, this.onCart, this.onOrders)
         this.model = new ModelSoSe()
 
         subscribe(events.LOADED_DATA, this.onLoad)
@@ -33,7 +33,11 @@ export default class ControllerSoSe{
         this.notify(this.events.AFTER_FILTER, goods)
     }
 
-    onCart = ev => {
+    onCart = _ => {
         this.notify(this.events.REND_CART)
+    }
+
+    onOrders = _ => {
+        this.notify(this.events.REND_HISTORY)
     }
 }

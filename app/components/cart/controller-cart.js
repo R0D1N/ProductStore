@@ -13,9 +13,6 @@ export default class ControllerCart{
 
         subscribe(events.CART_CD_CLICK, this.onCartCard);
         subscribe(events.REND_CART, this.onRender);
-
-
-
     }
 
     onCartCard = data =>{
@@ -47,9 +44,10 @@ export default class ControllerCart{
     }
 
     onGetForm = ev =>{
-        this.cusInfo = this.model.getForm(ev)
+        this.cusInfo = this.model.getForm(ev);
         this.model.makeOrderHs(this.cusInfo);
-        this.botData = this.model.getBotStat(this.cusInfo)
-        this.notify(this.events.SEND_MESSAGE, JSON.stringify(this.botData))
+        this.botData = this.model.getBotStat(this.cusInfo);
+        this.notify(this.events.SEND_MESSAGE, this.botData);
+        alert('Thank you for order!');
     }
 }

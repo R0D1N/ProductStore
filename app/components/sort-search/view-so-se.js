@@ -1,9 +1,10 @@
 export default class ViewSoSe{
     htmlHeader = document.querySelector('header');
 
-    constructor(cbSort, cbSearch, cbFilter, onCart) {
+    constructor(cbSort, cbSearch, cbFilter, onCart, onOrders) {
 
         this.onCart = onCart;
+        this.onOrders = onOrders;
 
         this.htmlHeader.insertAdjacentHTML('beforeend', `
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -17,7 +18,7 @@ export default class ViewSoSe{
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-auto mb-lg-0">
                     <div class="d-flex">
-                        <div class="control">
+                        <div class="control">                       
                             <div class="select is-warning">
                                 <select class="select-sort">
                                     <option value="high-price">Expensive first</option>
@@ -37,12 +38,14 @@ export default class ViewSoSe{
                                     <option value="Fruits & Vegetables">Fruits & Vegetables</option>
                                     <option value="Dairy, Eggs & Cheese">Dairy, Eggs & Cheese</option>
                                 </select>
-                            </div>
+                            </div>   
+                                                                           
                         </div>
                     </div>
                 </ul>
                 <form class="d-flex">
-                    <input class="form-control me-2 inp-search" type="search" placeholder="Search" aria-label="Search">
+                    <button type="button" class="btn btn-info btn-history" data-bs-toggle="modal" data-bs-target="#ModalHistory">Orders</button>
+                    <input class="form-control ms-2 me-2 inp-search" type="search" placeholder="Search" aria-label="Search">
                     <button type="button" class="btn btn-success btn-cart" data-bs-toggle="modal" data-bs-target="#ModalCart">MyCart</button>
                 </form>
             </div>
@@ -53,10 +56,13 @@ export default class ViewSoSe{
         this.htmlSortInput = document.querySelector('.select-sort');
         this.htmlFilterInput = document.querySelector('.select-filter');
         this.htmlCartBtn = document.querySelector('.btn-cart');
+        this.htmlOrders = document.querySelector('.btn-history')
+
 
         this.htmlSearchInput.addEventListener('input', cbSearch);
         this.htmlSortInput.addEventListener('input', cbSort);
         this.htmlFilterInput.addEventListener('input', cbFilter);
         this.htmlCartBtn.addEventListener('click', this.onCart);
+        this.htmlOrders.addEventListener('click', this.onOrders);
     }
 }
