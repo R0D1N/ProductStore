@@ -13,7 +13,7 @@ export default class ViewCart {
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title " id="ModalCartLabel">Cart</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close iNeedCloseIt" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         
@@ -72,7 +72,10 @@ export default class ViewCart {
 
             this.htmlBuyBtn = document.querySelector('.btn-form');
             this.htmlBuyBtn.addEventListener('click', this.onBuy);
+
+
         }
+
     }
 
     renderForm = _ => {
@@ -81,24 +84,36 @@ export default class ViewCart {
         this.htmlCartFooter.innerHTML = ``;
         this.htmlCartBody.innerHTML = `
             
-            <form class="row g-3 needs-validation" name="userInfo" id="form">
+            <form class="row g-3 novalidate" name="userInfo" id="form">
                   <div class="col-md-4">
                         <label for="validationCustom01" class="form-label">First name</label>
-                        <input type="text" class="form-control" id="validationCustom01" name="name" required>
+                        <input type="text" class="form-control" id="validationCustom01" name="name" placeholder="Name" required>
                         <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Enter a correct name</div>
                   </div>
                   <div class="col-md-4">
                         <label for="validationCustom02" class="form-label">Last name</label>
-                        <input type="text" class="form-control" id="validationCustom02"  name="LName" required>
+                        <input type="text" class="form-control" id="validationCustom02"  name="LName"  placeholder="Last name" required>
                         <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Enter a correct last name</div>
                   </div>
                   <div class="col-md-8">
                           <label for="floatingInputValue">E-mail</label> 
-                          <input type="email" class="form-control" id="validationCustom03" name="email" placeholder="name@example.com">
+                          <input type="email" class="form-control" id="validationCustom03" name="email" placeholder="name@example.com" required>
+                          <div class="valid-feedback">Looks good!</div>
+                          <div class="invalid-feedback">Enter a correct email</div>
+                  </div>
+                  <div class="col-md-8">
+                        <label for="validationCustom05" class="form-label">Phone number</label>
+                        <input type="text" class="form-control" id="validationCustom05"  name="phone"  placeholder="+380999999999" required>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Enter a correct phone</div>
                   </div>
                   <div class="col-md-8">
                         <label for="validationCustom03" class="form-label">City</label>
-                        <input type="text" class="form-control" id="validationCustom04" name="city" required>
+                        <input type="text" class="form-control" id="validationCustom04" name="city"  placeholder="Dnipro" required>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Enter a correct city</div>
                   </div>
                   <div class="col-12">
                         <button class="btn btn-primary btn_submit" type="submit">Submit form</button>
@@ -107,5 +122,49 @@ export default class ViewCart {
 
         this.htmlForm = document.getElementById('form')
         this.htmlForm.addEventListener('submit', this.onForm)
+        this.name = document.getElementById('validationCustom01');
+        this.LName = document.getElementById('validationCustom02');
+        this.city = document.getElementById('validationCustom04');
+        this.email = document.getElementById('validationCustom03')
+        this.phone = document.getElementById('validationCustom05')
+
+    }
+
+    renderError = (data, msg) =>{
+        if (msg === true) {
+            data.classList.remove('is-invalid')
+            data.classList.add('is-valid');
+        } else {
+            data.classList.remove('is-valid')
+            data.classList.add('is-invalid');
+            data.value = '';
+        }
+    }
+
+    onClose = _ =>{
+        document.getElementsByClassName("iNeedCloseIt")[0].click();
+    }
+
+    onError = data => {
+        console.log(data)
+        Object.keys(data).forEach((el) => {
+            switch (el) {
+                case 'name':
+                    this.renderError(this.name, data[el]);
+                    break;
+                case 'LName':
+                    this.renderError(this.LName, data[el]);
+                    break;
+                case 'email':
+                    this.renderError(this.email, data[el]);
+                    break;
+                case 'phone':
+                    this.renderError(this.phone, data[el]);
+                    break;
+                default:
+                    this.renderError(this.city, data[el]);
+            }
+        })
+
     }
 }

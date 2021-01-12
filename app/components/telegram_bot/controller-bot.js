@@ -9,7 +9,6 @@ export default class ControllerBot{
     }
 
     onSend = msg => {
-        console.log(msg);
         this.model.send(msg);
     }
 

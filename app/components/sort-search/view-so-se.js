@@ -27,6 +27,7 @@ export default class ViewSoSe{
                             </div>
                             <div class="select is-warning">
                                 <select class="select-filter">
+                                    <option value="All">All</option>
                                     <option value="Tea & Coffee">Tea & Coffee</option>
                                     <option value="Beverages">Beverages</option>
                                     <option value="Bread & Bakery">Bread & Bakery</option>

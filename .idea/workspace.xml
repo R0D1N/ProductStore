@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87551352-e7a1-40d4-8905-ca9126f86bb2" name="Default Changelist" comment="">
+    <list default="true" id="87551352-e7a1-40d4-8905-ca9126f86bb2" name="Default Changelist" comment="fixed: bugs">
+      <change afterPath="$PROJECT_DIR$/app/helpers/singletone-pattern.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/cart/controller-cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/cart/controller-cart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/cart/model-cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/cart/model-cart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/cart/view-cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/cart/view-cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/history/controller-history.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/history/controller-history.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/history/model-history.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/history/view-history.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/history/view-history.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/sort-search/model-so-se.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/sort-search/model-so-se.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/sort-search/view-so-se.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/sort-search/view-so-se.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/components/telegram_bot/controller-bot.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/telegram_bot/controller-bot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -49,6 +62,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last.edited.regexp" value="Sample Text" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/components/good_details" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -56,6 +70,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/components/good_details" />
       <recent name="$PROJECT_DIR$/app/components/telegram_bot" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/helpers" />
     </key>
   </component>
   <component name="RunManager">
@@ -82,6 +99,7 @@
       <workItem from="1610048727609" duration="241000" />
       <workItem from="1610049017110" duration="4326000" />
       <workItem from="1610113870601" duration="29217000" />
+      <workItem from="1610381623042" duration="12056000" />
     </task>
     <task id="LOCAL-00001" summary="MVC structure">
       <created>1608902687109</created>
@@ -139,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610304229400</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: bot sends not all info(need to do extra parsing of order)">
+      <created>1610307501904</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610307501904</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +205,19 @@
         </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -197,6 +234,8 @@
     <MESSAGE value="feat: sort-search components" />
     <MESSAGE value="feat: Cart render" />
     <MESSAGE value="feat: orders history render" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: orders history render" />
+    <MESSAGE value="feat: bot sends not all info(need to do extra parsing of order)" />
+    <MESSAGE value="fixed: bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed: bugs" />
   </component>
 </project>

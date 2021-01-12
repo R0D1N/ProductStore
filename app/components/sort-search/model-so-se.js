@@ -18,6 +18,10 @@ export default class ModelSoSe{
     }
 
     filtering = type => {
-        return this.goods.filter(st => st.category === type)
+        if (type === 'All'){
+            return this.goods;
+        }else{
+            return this.goods.filter(st => st.category === type)
+        }
     }
 }

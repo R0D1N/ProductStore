@@ -43,8 +43,10 @@ export default class ModelCart {
     }
 
     delete_good = good => {
-
+        console.log(this.rendArray)
         const arId = this.rendArray.indexOf(good);
+
+
         this.rendArray.splice(arId, 1);
 
         this.unqList.forEach(el => {
@@ -68,7 +70,7 @@ export default class ModelCart {
         this.delete_in_array(good);
     }
 
-    getForm = ev => {
+    getForm = (ev, sum) => {
         ev.preventDefault();
 
         const fields = document.querySelectorAll('input, select, textarea');
@@ -77,11 +79,66 @@ export default class ModelCart {
             const {name, value} = fl;
             values[name] = value;
         })
-        values.date = Date.now();
-        values.order = this.rendArray;
-        this.rendArray = [];
-        return values;
+
+        const result = this.validation(values)
+
+        if (result === 1){
+            console.log(this.array);
+
+            let time = new Date()
+            time.toDateString();
+            let UTCstring = time.toUTCString();
+            values.date = UTCstring
+            values.order = this.rendArray;
+            values.sum = sum;
+            this.rendArray = [];
+            this.array = [];
+            this.unqList.clear();
+            localStorage.setItem('cart', `[]`);
+            localStorage.setItem('rendCart', `[]`);
+            return values;
+        }else{
+            return result;
+        }
     }
+
+    validation = ( { name, LName, city, email, phone } ) =>{
+
+        const result = {}
+
+        result.name = this.validHelp(name, 'Name');
+        result.LName = this.validHelp(LName, 'Surname');
+        result.city = this.validHelp(city, 'City');
+        result.email = this.validHelp(email, 'Email');
+        result.phone = this.validHelp(phone, 'Phone')
+
+        if (!(Object.values(result).find((el) => typeof el !== 'boolean'))) {
+            return 1;
+        }
+
+        return result;
+    }
+
+    validHelp = (data, type) => {
+        const reg = {
+            Email: /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/i,
+            Name: /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u,
+            Surname: /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u,
+            Phone: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
+            City: /^[a-zA-Zа-яА-Я'][a-zA-Zа-яА-Я-' ]+[a-zA-Zа-яА-Я']?$/u,
+        };
+
+        let result = `${type} is not valid`;
+
+        if (reg[type].test(data)) {
+            result = true;
+        }
+
+        return result;
+    }
+
+
+
 
     makeOrderHs = info =>{
         this.history.push(info);
@@ -90,16 +147,15 @@ export default class ModelCart {
     }
 
     getBotStat = data =>{
-        const { name, LName, email, city, date } = data;
 
-        console.log(data);
+        const { name, LName, email, city, date, phone } = data;
 
-        return encodeURI(`        
-        ${name}
-        ${LName}
-        ${email}                
-        ${city}
-        ${date}
+        return encodeURI(`Name: ${name}
+        Surname: ${LName}
+        Email: ${email}  
+        Phone: ${phone}              
+        City: ${city}
+        Date: ${date}
         `.replace(/\./g, ','));
     }
 }

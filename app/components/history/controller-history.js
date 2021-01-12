@@ -14,7 +14,6 @@ export default class ControllerHistory{
     }
 
     onRender = _ =>{
-        this.HSarray = this.cartModel.history;
-        this.view.render(this.HSarray);
+        this.view.render();
     }
 }

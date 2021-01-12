@@ -46,14 +46,22 @@ export default class ControllerCart{
     //cusInfo = INFO about customer from FORM
 
     onGetForm = ev =>{
-        this.cusInfo = this.model.getForm(ev);
-        this.model.makeOrderHs(this.cusInfo);
-        this.SendMessage(this.cusInfo);
+        const sum = this.model.summary();
+        this.cusInfo = this.model.getForm(ev, sum);
+        if ((Object.values(this.cusInfo).find((el) => typeof el !== 'boolean'))){
+            this.view.onError(this.cusInfo);
+        }else{
+
+            this.model.makeOrderHs(this.cusInfo);
+            this.SendMessage(this.cusInfo);
+            this.view.onClose()
+        }
+
     }
 
     SendMessage = data =>{
         this.botData = this.model.getBotStat(data);
-        this.notify(this.events.SEND_MESSAGE, JSON.stringify(this.botData));
+        this.notify(this.events.SEND_MESSAGE, this.botData);
         alert('Thank you for order!');
     }
 
